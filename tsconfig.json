@@ -1,0 +1,16 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "target": "es6",
+    "outDir": "./dist",
+
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}
