@@ -5,7 +5,6 @@ const got = require('got');
 const jsdom = require("jsdom");
 const express = require('express')
 const cache = require('memory-cache');
-const { JSDOM } = jsdom;
 import * as Joi from 'joi';
 import { createValidator } from "express-joi-validation";
 import { errorHandler } from "./errorHandlermw";
@@ -155,7 +154,7 @@ app.get('/:code/*', async (req: Request, res: Response, next: NextFunction) => {
                 throw new Error("Invalid Chess Code");
 
             }
-        console.log("Entry not  found in Cache. Using JSON data to send response");
+        console.log('Entry not  found in Cache. Using JSON data to send response');
         }
     } catch (error) {
         next(error);
