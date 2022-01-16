@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 import { Request , Response } from "express";
 const fs = require('fs');
 const got = require('got');
