@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon app.ts",
-    "generate:chessdate": "nodemon filegenrator/chessjsongenerator.ts",
+    "generate:chessdata": "ts-node filegenerator/chessjsongenerator.ts",
     "start":"node dist/app.js",
     "build": "tsc"
   },

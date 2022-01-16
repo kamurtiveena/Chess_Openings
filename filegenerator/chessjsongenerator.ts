@@ -27,7 +27,7 @@ got(chessUrl).then((response: any) => {
         })
             
     });
-    filesystem.writeFileSync('./chessmoves.json', JSON.stringify(chessdata));
+    filesystem.writeFileSync('../chessmoves.json', JSON.stringify(chessdata));
     console.log("File writing completed");
 }).catch((err: any) => {
     console.log(err);
