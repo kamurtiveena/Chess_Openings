@@ -17,9 +17,9 @@ const TTL =180*1000;
 const chessUrl= 'https://www.chessgames.com/chessecohelp.html';
 
 const app = express();
+
 const data = fs.readFileSync("chessmoves.json");
 const chessJson = JSON.parse(data);
-
 
 
 const codechema = Joi.object({
@@ -30,6 +30,8 @@ app.get('/', async (req : Request, res :Response) => {
 
     // To get Data in Json form
     // res.send(chessJson);
+    console.log('Received Request in Get All Endpoint');
+
     const response = await got(chessUrl);
     // To render it as html
     res.send(response.body);
@@ -37,7 +39,8 @@ app.get('/', async (req : Request, res :Response) => {
 
 
 app.get('/:code', async (req : Request, res :Response) => {
-    
+
+    console.log('Received Request in Get move by code Endpoint');
     const code = req.params.code;
     // const response = dataset.filter((data))
     // const response = await got(chessUrl);
@@ -53,7 +56,6 @@ app.get('/:code', async (req : Request, res :Response) => {
         res.send( cacheContent );
 
     }else{
-
         console.log("Entry not  found in Cache. Using JSON data to send response");
         const chesCodeMove  = chessJson.filter(ele=>ele.code === code);
  
@@ -78,8 +80,6 @@ app.get('/:code', async (req : Request, res :Response) => {
 
 });
 
-app.listen(PORT,()=>{
-    console.log(`Server started at port ${PORT}`);
-
-    console.log(chessJson[0])
+app.listen(process.env.PORT || 5000,()=>{
+    console.log(`Server started at port ${process.env.PORT||3000}`);
 });
