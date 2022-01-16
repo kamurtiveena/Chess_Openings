@@ -15,14 +15,16 @@ const validator = createValidator({passError:true});
 const PORT =3000;
 const TTL =180*1000;
 const chessUrl= 'https://www.chessgames.com/chessecohelp.html';
-const codechema = Joi.object({
-  code: Joi.string().required()
-})
+
 const app = express();
 const data = fs.readFileSync("chessmoves.json");
 const chessJson = JSON.parse(data);
 
 
+
+const codechema = Joi.object({
+    code: Joi.string().required()
+  })
 app.get('/', async (req : Request, res :Response) => {
 
 
@@ -78,4 +80,6 @@ app.get('/:code', async (req : Request, res :Response) => {
 
 app.listen(PORT,()=>{
     console.log(`Server started at port ${PORT}`);
+
+    console.log(chessJson[0])
 });
