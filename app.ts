@@ -3,7 +3,7 @@ import { Request , Response } from "express";
 const fs = require('fs');
 const got = require('got');
 const jsdom = require("jsdom");
-
+const express = require('express')
 const cache = require('memory-cache');
 const { JSDOM } = jsdom;
 import * as Joi  from 'joi';
@@ -18,8 +18,6 @@ const chessUrl= 'https://www.chessgames.com/chessecohelp.html';
 const codechema = Joi.object({
   code: Joi.string().required()
 })
-import * as express  from 'express';
-
 const app = express();
 const data = fs.readFileSync("chessmoves.json");
 const chessJson = JSON.parse(data);
