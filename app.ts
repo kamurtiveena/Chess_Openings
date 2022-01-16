@@ -30,8 +30,7 @@ app.get('/', async (req : Request, res :Response) => {
     // res.send(chessJson);
     const response = await got(chessUrl);
     // To render it as html
-    // res.send(response.body);
-    res.send("Response Successful");
+    res.send(response.body);
 });
 
 

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon app.ts",
     "generate:chessdate": "nodemon filegenrator/chessjsongenerator.ts",
-    "start":"tsc && node dist/app.js",
+    "start":"node dist/app.js",
     "build": "tsc"
   },
   "author": "",
