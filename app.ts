@@ -145,7 +145,7 @@ app.get('/:code/*', async (req: Request, res: Response, next: NextFunction) => {
                     }
                 });
 
-                const nextMove = validMoves[inputmoves.length - 1];
+                const nextMove = validMoves[inputmoves.length];
                 memCache.put(key, validMoves,TTL );
                 res.status(200).send({ nextMove });
 
